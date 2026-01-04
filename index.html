@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poodles of the Pantheon | Standard Poodle Breeder | Coal City, IL</title>
+    <meta name="description" content="Small-scale standard poodle breeder in Coal City, IL. Health tested, conformation titled breeding dogs. Puppy Culture protocol. Lifelong support.">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', Georgia, serif;
+            color: #f8f8f8;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #0a0a0a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(94, 201, 183, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Logo */
+        .logo {
+            max-width: 300px;
+            width: 90%;
+            margin-bottom: 60px;
+            filter: drop-shadow(0 4px 20px rgba(212, 175, 55, 0.3));
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #d4af37;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-style: italic;
+            line-height: 1.3;
+        }
+        
+        .decorative-line {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #D4AF37, transparent);
+            margin: 30px auto;
+        }
+        
+        .hero-tagline {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: #5ec9b7;
+            margin-bottom: 50px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        /* CTA */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #c9b178 100%);
+            color: #1a1a1a;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: bold;
+            font-style: italic;
+            padding: 25px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+            border: 2px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #5ec9b7 0%, #4db8a6 100%);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(94, 201, 183, 0.5);
+            color: #1a1a1a;
+            border-color: #5ec9b7;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 30px;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #d4af37;
+            animation: bounce 2s infinite;
+            opacity: 0.6;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 20px;
+            background: #f5f1e8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .about-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.9;
+        }
+        
+        .about-closing {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            max-width: 800px;
+            margin: 80px auto 0;
+            padding-top: 60px;
+            line-height: 1.9;
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .pillar {
+            background: #0a0a0a;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+            border-top: 4px solid #d4af37;
+            text-align: center;
+        }
+        
+        .pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .pillar h3 {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .pillar p {
+            color: #d4af37;
+            line-height: 1.8;
+        }
+        
+        /* Standards Section */
+        .standards-section {
+            padding: 80px 20px;
+            background: #0a0a0a;
+        }
+        
+        .standards-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+        
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: start;
+        }
+        
+        .standards-badge {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .standards-badge-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #d4af37;
+            border: 3px solid #d4af37;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .standards-badge-icon::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.5) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .standards-badge:hover .standards-badge-icon {
+            background: #d4af37;
+            color: #1a1a1a;
+            transform: scale(1.05);
+        }
+        
+        .standards-badge:hover .standards-badge-icon::before {
+            opacity: 1;
+        }
+        
+        .standards-badge-label {
+            font-size: 0.95rem;
+            color: #c9b178;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            min-height: 2.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Expectations Section */
+        .expectations {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            text-align: center;
+        }
+        
+        .expectations h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #d4af37;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        
+        .expectations-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .expectations p {
+            font-size: 1.2rem;
+            color: #f8f8f8;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .expectations-list {
+            text-align: left;
+            margin: 40px auto;
+            max-width: 700px;
+        }
+        
+        .expectations-list li {
+            color: #c9b178;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        
+        .expectations-cta {
+            margin-top: 50px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #f8f8f8;
+            padding: 60px 20px 40px;
+        }
+        
+        .footer-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .footer-card {
+            padding: 20px;
+        }
+        
+        .footer-card h3 {
+            color: #d4af37;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-card p {
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+        
+        .footer-card a {
+            color: #c9b178;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-card a:hover {
+            color: #d4af37;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: #2d2d2d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #d4af37;
+            color: #1a1a1a;
+            transform: translateY(-3px);
+        }
+        
+        .footer-disclaimer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2d2d2d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-disclaimer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .pillars {
+                grid-template-columns: 1fr;
+            }
+            
+            .badges-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .cta-button {
+                padding: 20px 45px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 400px;
+                margin-bottom: 40px;
+            }
+            
+            .cta-button {
+                padding: 18px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Logo -->
+            <img src="assets/pantheon_logo.png" alt="Poodles of the Pantheon" class="logo">
+            
+            <h1>Breeding Excellence, Raising Companions</h1>
+            
+            <div class="decorative-line"></div>
+            
+            <p class="hero-tagline">Standard poodles bred for temperament, structure, and versatility. Each generation purposefully planned.</p>
+            
+            <a href="#about" class="cta-button">Learn About Our Program</a>
+            <p class="tagline">Understand our philosophy, process, and expectations</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Our Commitment to the Breed</h2>
+            <p class="about-intro">
+                Every breeding decision at Poodles of the Pantheon reflects our dedication to producing standard poodles of sound temperament and correct structure. We maintain rigorous standards because our dogs deserve nothing less and neither do the families who welcome them home.
+            </p>
+            
+            <div class="pillars">
+                <div class="pillar">
+                    <h3>Health Testing</h3>
+                    <p>All breeding dogs are tested according to Poodle Club of America guidelines. This includes OFA clearances for hips and elbows, genetic testing, including PRA-PRCD, vWD, NE, and DM. Results are publicly available on the OFA database, complete with CHIC certification.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h3>Conformation</h3>
+                    <p>Each parent dog earns titles in conformation before breeding consideration. Our dogs hold UKC Grand Champion and/or AKC Championship titles, demonstrating adherence to breed standards for structure, movement, and type.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h3>Sporting and Companion</h3>
+                    <p>Standard poodles are versatile athletes and devoted companions. We value performance titles in AKC and UKC sporting events, therapy work, and other activities that demonstrate the breed's original working heritage. Training for retrieval, scent work, sporting, and companion activities ensures our dogs embody the full spectrum of poodle versatility.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h3>Puppy Culture Protocol</h3>
+                    <p>We raise puppies using the Puppy Culture protocol, which includes early neurological stimulation, comprehensive socialization, temperament testing, and enrichment activities. All puppies are raised in our home from birth through placement.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h3>Lifelong Partnership</h3>
+                    <p>Our commitment to our dogs lasts a lifetime. Any puppy we place will always have a place with us if their situation changes. We welcome them back with care and intention, offering support, time, and guidance. Placing a puppy begins a relationship; it never ends it.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h3>Genetic Diversity</h3>
+                    <p>We prioritize genetic diversity through careful pedigree analysis, monitoring Coefficient of Inbreeding (COI), and utilizing Better Bred tools for breeding decisions. Our selective, low-volume approach means we breed thoughtfully, not frequently. Each pairing is evaluated for what it contributes to breed health, longevity, and the betterment of future generations.</p>
+                </div>
+            </div>
+            
+            <p class="about-closing">
+                We believe the wellbeing of the dog depends on balance. All breeding decisions weigh health, structure, function, genetic diversity, and early development together, with no single priority elevated above the whole dog.
+            </p>
+        </div>
+    </section>
+
+    <!-- Standards Section -->
+    <section class="standards-section">
+        <div class="container">
+            <h2>Standards We Uphold</h2>
+            <div class="badges-grid">
+                <div class="standards-badge">
+                    <div class="standards-badge-icon">
+                        <img src="assets/akc_badge.png" alt="AKC" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="standards-badge-label">American Kennel Club</div>
+                </div>
+                
+                <div class="standards-badge">
+                    <div class="standards-badge-icon">
+                        <img src="assets/ukc_badge.png" alt="UKC" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="standards-badge-label">United Kennel Club</div>
+                </div>
+                
+                <div class="standards-badge">
+                    <div class="standards-badge-icon">
+                        <img src="assets/pca_badge.png" alt="PCA" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="standards-badge-label">Poodle Club of America</div>
+                </div>
+                
+                <div class="standards-badge">
+                    <div class="standards-badge-icon">
+                        <img src="assets/ofa_badge.png" alt="OFA" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="standards-badge-label">Orthopedic Foundation</div>
+                </div>
+                
+                <div class="standards-badge">
+                    <div class="standards-badge-icon">
+                        <img src="assets/pupypculture_badge.png" alt="Puppy Culture" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="standards-badge-label">Puppy Culture</div>
+                </div>
+                
+                <div class="standards-badge">
+                    <div class="standards-badge-icon">
+                        <img src="assets/IABCA_badge.png" alt="IABCA" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="standards-badge-label">International All Breed Canine Association</div>
+                </div>
+                
+                <div class="standards-badge">
+                    <div class="standards-badge-icon">
+                        <img src="assets/chic_badge.png" alt="CHIC" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="standards-badge-label">Canine Health Information Center</div>
+                </div>
+                
+                <div class="standards-badge">
+                    <div class="standards-badge-icon">
+                        <img src="assets/bb_badge.png" alt="Better Bred" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="standards-badge-label">BetterBred</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expectations Section -->
+    <section class="expectations">
+        <div class="container">
+            <div class="expectations-content">
+                <h2>Before You Reach Out</h2>
+                <p>
+                    Poodles of the Pantheon is a small-scale breeding program. We produce 0 to 2 litters per year, and availability is limited. Finding the right match between puppy and family is our priority.
+                </p>
+                <p>
+                    We ask that prospective families take time to understand our breeding philosophy, review our requirements, and consider whether a standard poodle from our program aligns with their lifestyle and expectations.
+                </p>
+                
+                <ul class="expectations-list">
+                    <li>Review our breeding dogs, their health testing, and titles</li>
+                    <li>Read about our Puppy Culture approach and socialization protocols</li>
+                    <li>Understand our contract requirements and lifetime commitment expectations</li>
+                    <li>Explore resources on standard poodle ownership, grooming, and care</li>
+                    <li>Consider whether you're prepared for the responsibilities of poodle ownership</li>
+                </ul>
+                
+                <p>
+                    Once you've familiarized yourself with our program, we welcome your application. We review applications on a rolling basis and work to match puppies thoughtfully with families suited to their temperament and energy.
+                </p>
+                
+                <div class="expectations-cta">
+                    <a href="http://www.pantheonpoodles.com" class="cta-button">Enter the Pantheon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-cards">
+                <div class="footer-card">
+                    <h3>Contact</h3>
+                    <p><a href="tel:6028248841">(602) 824-8841</a></p>
+                    <p><a href="mailto:pantheonpoodles@gmail.com">pantheonpoodles@gmail.com</a></p>
+                    <p style="color: #c9b178; margin-top: 15px;">Coal City, IL<br>Mesa, AZ</p>
+                </div>
+                
+                <div class="footer-card">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/PantheonPoodles/" class="social-link" target="_blank" rel="noopener" title="Facebook">f</a>
+                        <a href="https://www.instagram.com/pantheon_poodles/" class="social-link" target="_blank" rel="noopener" title="Instagram">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-card">
+                    <h3>Copyright</h3>
+                    <p>&copy; 2026 Poodles of the Pantheon</p>
+                    <p>All rights reserved</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Standard Poodle Breeder</p>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <p>We do not support or sell to those who breed poodle mixes or merle poodles.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
